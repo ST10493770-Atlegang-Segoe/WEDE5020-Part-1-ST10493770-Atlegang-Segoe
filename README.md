@@ -35,3 +35,44 @@ A[Home] --> B[About]
 A --> C[Programs]
 A --> D[Volunteer]
 A --> E[Contract]
+
+Part 2 
+
+Changes made:
+Stylesheet: css/style.css
+Implemented desktop design:
+Used float based layout, typography and color scheme
+
+Added responsive design:
+media queries for tablet (768px) and 480px for mobile 
+
+Enhanced user experience:
+Proper spacing 
+Hover effects 
+
+Features Implemented:
+Layout using floats and display properties
+Pseudo code
+color scheme
+Responsive navigation
+CSS Reset and base styling
+
+Broswer Testing:
+Chrome Responsive design navigations 
+Styles applied correctly.
+
+Reference
+//Code attribution
+//This method was taken from W3Achools
+//Link https://www.w3schools.com/html/html_css.asp
+//Author
+
+//Code attribution
+//This method was taken from Codeacademy
+//Link https://www.codecademy.com/article/html-inline-styles
+//Author
+
+//Code attribution
+//This methoad was taken from Hostinger
+//Link https://www.hostinger.com/tutorials/css-class
+//Author
