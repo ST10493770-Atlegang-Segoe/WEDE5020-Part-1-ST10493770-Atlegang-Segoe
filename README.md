@@ -29,12 +29,8 @@ Reference
 //Author 
 
 Sitemap
-```mermaid
-graph TD
-A[Home] --> B[About]
-A --> C[Programs]
-A --> D[Volunteer]
-A --> E[Contract]
+<img width="895" height="350" alt="image" src="https://github.com/user-attachments/assets/439237b3-ebd7-4721-b733-5a043ff2f9d6" />
+
 
 Part 2 
 
