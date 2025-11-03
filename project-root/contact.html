@@ -24,51 +24,62 @@
         </header>
         <main> 
             <section class="content-section">
+                <h1> Contact Community Hope Initiative</h1>
+                <p> We would love to hear from you! Reach out through any of the methods below.</p>
+                <div class="contact-grid">
 
-            <h1> Contact us</h1>
-            <div class="content-info">
-               <h2> Our Loction</h2>
-               <p> 123 Hope Street, Johannesburg, 200</p>
-               <h2>Phone</h2>
-               <p> 011 456 7890</p>
-               <h2> Email</h2>
-               <p>info@communityhope.org.za</p>
-            </div>
-            <div class="contact form">
-                <h2>Send us a Message</h2>
-                <form>
-                     <div class="form-group">
-                    <label for="name">Full name</label>
-                    <input type="text" id="name" name="name" required>
+                    <!--Contact Information-->
+                    <div class="contact-info">
+                        <h2> Our Location</h2>
+                        <p><strong><br> 123 Hope Street<br> South Africa</strong></p>
+                        <h2>Phone Number</h2>
+                        <p><strong>General Enquiries:</strong> 0114568790<br> 
+                        <strong>Donation Hotline</strong> 011 456 7891<br>
+                        <strong>Volunteer Coordinator:</strong> 011 456 7892 </p>
+                        <h2> Email Address</h2>
+                        <p><strong>General </strong>info@communityhope.org.za<br>
+                        <strong>Donations:</strong>donation@communityhope.org.za</p>
+
+                        <h2> Operating Hours</h2>
+                        <p><strong> Monday -Friday </strong> 08:00 Am-5:00PM<br>
+                        <strong>Saturday:</strong>9:00AM-1:00PM<br>
+                    <strong>Sunday:</strong>Closed<br>
+                    <em> Emergency support available 24/7</em></p>
+                </div>
+
+                <!--Google Map-->
+                <div class="map-cotainer">
+                    <h2>Find us on the map</h2>
+                    <div id="map" style="height: 300px;background: #e9ecef;border-radius: 8px;display: flex; align-items: center; justify-content: center;">
+                       
                     </div>
-                    <div class="form-group">
-                        <label for="email">Email</label>
-                        <input type="email" id="email" name="emal" required>
+                </div>
+
+                <!--Contact Form-->
+                <div class="contact-form">
+                    <h2>Send Us a Message</h2>
+                    <form id="contact-form">
+                        <label for="contactName">Full Name</label>
+                        <input type="text" id="contactName" name="contactName" required placeholder="Enter your full name">
+                        <span class="error-message"></span>
+                         </div>
+
+                         <div classs="form-group">
+                            <label for="contactEmail">Email Address</label>
+                            <input type="email" id="ConductEmail" name="contactEmail" required placeholder="your.email@example.com">
+                            <span class="error-message" id="emailError"></span>
+                         </div>
+
+                         <div class="form-group">
+                            <label for="contactPhone" name="contactPhone" placeholder="071 234 5678">
+                                
+                            </label>
+                         </div>
                         
-                    </div>
+                    </form>
+               
 
-                    <div class="form-group">
-                        <label for="interest"> Area of interest</label>
-                        <select id="interest" name="interest">
-                            <option value="Tutoring">Tutoring</option>
-                            <option value="nutrition">Nutrition Program</option>
-                            <option value="Sports"> Sports Coaching</option>
-                           
-                        </select>
-                </form>
-            </div>
-            </section>
+                    
+                </div>
 
-        </main>
-        <footer> 
-            <div class="contact-info">
-                <p> 011 456 7890</p>
-                <p> info@Communityhope.org.za</p>
-
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2025 Community Hope Initiative.</p>
-            </div>
-        </footer>
-    </body>
-</html>
+            

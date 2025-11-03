@@ -1,0 +1,4 @@
+user-agent: *
+Allow: /
+Disallow: /admin/
+Sitemap: https://communityhope.org.za/sitemap.xml

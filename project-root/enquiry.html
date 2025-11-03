@@ -6,7 +6,7 @@
         <title> enquiry page</title>
         <link rel="stylesheet" href="style.css">
     </head>
-     <body>
+     <body> 
         <header>
             <div id="logo">
                 <a href="index.html"><img src="images/Community logo.png" alt="Community Hope Initiative "></a>
@@ -25,34 +25,184 @@
         </header>
         <main>
             <section class="content-section"> 
-                <h1>Become a Volunter</h1>
-                <form class="Volunteer-group">
-                    <div class="form-group">
-                    <label for="name">Full name</label>
-                    <input type="text" id="name" name="name" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="email">Email</label>
-                        <input type="email" id="email" name="emal" required>
-                    </div>
+                <h1>Join Our Volunteer Team</h1>
+                <p>Make a meaningful difference in the lives of Johannesburg's children. Complete the form below to apply as a volunteer.</p>
 
+                <div class="volunteer-roles">
+                    <h2>Available Volunteer Position</h2>
+                    <div class="role-grid">
+                        <div class="role-item">
+                            <h3>Academic Tutor</h3>
+                            <p>Help students with homework and subject tutoring. Subjects:Math, English, Science. Requirements: Subject proficiency, patience with children.</p>
+                        </div>
+                        <div class="role-item">
+                            <h3> Nutrition Program Assistant</h3>
+                            <p>Assist with meal preparation and distribution in our feeding scheme. Help ensure 1500 children receive daily nutritious meals.</p>
+                        </div>
+                        <div class="role-item">
+                            <h3> Sports Coach</h3>
+                            <p> Lead sports activities and team building exercises. Sports: Soccer, netball, athletics. Promote physical health and teamwork.</p>
+                        </div>
+                        <div class ="role-item">
+                            <h3>Creative Arts Facilitor</h3>
+                            <p> Conduct art, music, or drama workshops. No prior experience needed just creativity and enthusiam!</p>
+                        </div>
+                    </div>
+                </div>
+
+                <form id="volunteer-Form" class ="volunteer-form">
+                    <div class ="form-group">
+                        <label for="name">Full Name</label>
+                        <input type="text" id="name" name="name" required placeholder="Enter your full name"> 
+                        <span class ="error-message" id="nameError"></span>
+                    </div>
                     <div class="form-group">
-                        <label for="interest"> Area of interest</label>
-                        <select id="interest" name="interest">
-                            <option value="Tutoring">Tutoring</option>
+                        <label for="email">Email Address </Address></label>
+                        <input type="email" id="email" name="email" required placeholder="your.email@example.com">
+                        <span class ="error-message" id="emailError"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" name="phone" required placeholder="071 234 5670" pattern="[0-9]{10}">
+                        <span class="error-message" id="phoneError"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="interest">Preferred volunteer Area </label>
+                        <select id="interest" name="interest" required>
+                            <option value="">Select an Area</option>
+                            <option value="tutoring">Academic Tutoring</option>
                             <option value="nutrition">Nutrition Program</option>
-                            <option value="Sports"> Sports Coaching</option>
+                            <option value="Sports Coaching"></option>
+                            <option value="Arts">Creative Arts</option>
+                            <option value="Events Coordination"></option>
+                            <option value="admin">Administrative support</option>
+
                         </select>
                     </div>
-                    <button type="Sumbit" class="cta-Button">Sumbit</button>
+                    
+                    <div class="form-group">
+                        <label for="availability">Availability</label>
+                        <select id="availability" name="availability" required> 
+                            <option value="">Select availability</option>
+                            <option value="weekdays">Weekdays Only</option>
+                            <option value="weekends">Weekends Only</option>
+                            <option value="both">Both Weekdays & Weekends</option>
+                            <option value="flexible">Flexible</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="experience">Previous experience (Optional)</label>
+                        <textarea id="experience" name="experience" placeholder="Briefly describe any relevant volunteer or work experience..."></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="Message">Why do you want to volunteer with us?</label>
+                        <textarea id="Message" name="Message" required placeholder="Tell us what motivates you to join our mission..."></textarea>
+                        <span class="error-message" id="messageError"></span>
+                    </div>
+                    <div class="form-group checkbox-group">
+                        <input type="checkbox" id="agree" name="agree" required>
+                        <label for="agree"> I agree to the <a href="#">Terms & coditions</a> and understand this is a volunteer position</label>
+                        <span class="error-message" id="agreeError"></span>
+                    </div>
+
+                    <button type="submit" class="cta-Button">Sumbit Application</button>
 
                 </form>
-                    
-                </main>
-    
+
+                <div id="successMessage" class="success-message" style="display: none;"> 
+                    <h2>Thank you for your application </h2>
+                    <p>We have received your volunteer application and will contact you within <strong>2-3 business days</strong></p>
+                    <p>In the meantime, feel free to explore our <a href="services.html">Programs</a> or <a href="contact.html">contact us</a> with any questions.</p>
+
+                    <button onclick="resetForm()" class="cta-Button">Apply Again</button>
+                </div>
+                </section>
+                </main> 
+
+                <script>
+                    document.getElementById('volunteerForm').addEventListener('submit', function(e){ e.preventDefault();
+                        //Clear previous errors 
+                        clearErrors();
+                        //Get from values
+                        const name= document.getElementById('name').value.trim();
+
+                        const email = document.getElementById('email').value.trim();
+                        const phone = document.getElementById('phone').value.trim()
+                        const interest = document.getElementById('interest').value;
+                        const availability = document.getElementById('availability').value;
+                        const message = document.getElementById('message').value.trim();
+                        const agree = document.getElementById('agree').checked;
+
+                        let isVaild = true;
+                        //Name validation 
+                        if (m=name.length <2)
+                        {
+                            showError('nameError', 'Please enter your full name (min 2 characters)');
+                            isVaild = false;
+                         }
+
+                         //Email validation 
+                         const emailRegex = / ^^\s@1+@1^\s@1+.[^s@]+$/;
+                         if (!emailRegex.test(email)){
+                            showError('emailError', 'Please enter a vaild email addresss');
+                            isVaild=false;
+                         }
+
+                         //Phone validation
+                         const phoneRegex = /^[0-9]{10}$/;
+                         if (! phoneRegex,test(phone)){
+                            showError ('phoneError', 'Please enter a valid 10-digit phone number');
+                            isVaild =false;
+                         }
+
+                         //Message vaildation
+                         if (message.length<10){
+                            showError ('messageError', 'Please tell us more about your motivation(min 10 characters)');
+                            isVaild=false;
+                         }
+
+                         //Agreement validation 
+                         if (!agree){
+                            showError('agreeError', 'You must agree to the terms and conditions');
+                            isVaild=false;
+                         }
+                         if (isVaild){
+                            //Simulate form submission 
+                            simulateSumbission();
+                         }
+                        }); 
+
+                        function showError(elementId, message){
+                            document.getElementById(elementId).textContent =message; }
+                            function clearErrors(){
+                                const errorElements = document.querySelectorAll('.error-message');
+                                errorElements.forEach(element =>
+                            { 
+                                element.textContent ='';
+                            });
+                        }
+
+                        function 
+                        simulateSumbission(){
+                            //Hide form, show success message
+                            document.getElementById('volunteerForm').style.display ='none';
+                            document.getElementById('volunteerForm').style.display ='block';
+
+                            //In a real application you would send data to server here
+                            console.log('Form submitted successfully!');
+                        }
+
+                        function resetForm(){
+                            //Show form, hide success message, reset form 
+                            document.getElementById('volunteerForm').style.display='block';
+                            document.getElementById('successMessage').style.display ='none';
+                            document.getElementById('volunteerForm').reset();
+
+                        }
+                        
+                         </script>
+                         </body>
 </html>
 
 
-
-
-
+                
